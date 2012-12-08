@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Naturally::VERSION
   gem.authors       = ["Robb Shecter"]
   gem.email         = ["robb@weblaws.org"]
-  gem.description   = %q{Sorts numbers in string form according to the way people are used to seeing them.}
-  gem.summary       = %q{Natural Sorting}
+  gem.description   = %q{Sorts numbers according to the way people are used to seeing them.}
+  gem.summary       = %q{Natural Sorting with support for legal numbering}
   gem.homepage      = "http://github.com/dogweather/naturally"
 
   gem.files         = `git ls-files`.split($/)
