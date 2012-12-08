@@ -1,8 +1,8 @@
 # Naturally
 
 Natural sorting with support for legal document numbering. 
-See the [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/)
-for the motivation behind this library.
+See [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/)
+for the motivations to make this library.
 
 ## Installation
 
