@@ -2,18 +2,19 @@ require "naturally/version"
 
 module Naturally
   
-  # @return [Array] of strings sorted as if they
-  # were numbers.
+  # Perform a natural sort.
+  # @param [Array<String>] a list of numbers to sort.
+  # @return [Array<String>] the numbers sorted naturally.
   def self.sort(an_array)
     return an_array.sort_by{ |x| normalize(x) }
-  end
-  
-  
-  private
+  end  
 
   def self.normalize(version)
     version.to_s.scan(%r/[0-9a-zA-Z]+/o).map{|i| NumberElement.new(i)}
   end
+
+
+  private
 
   class NumberElement
     include Comparable
