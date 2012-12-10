@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-See the spec for examples.
+See [the spec for examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
 
 ## Contributing
 
