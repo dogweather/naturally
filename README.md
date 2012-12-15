@@ -27,7 +27,7 @@ Or install it yourself as:
 ## Usage
 
 ```Ruby
-Naturally.sort(['1.1', '1.10', '1.2'])
+Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
