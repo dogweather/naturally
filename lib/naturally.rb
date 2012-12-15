@@ -3,14 +3,19 @@ require "naturally/version"
 module Naturally
   
   # Perform a natural sort.
-  # @param [Array<String>] a list of numbers to sort.
+  # @param [Array<String>] an_array the list of numbers to sort.
   # @return [Array<String>] the numbers sorted naturally.
   def self.sort(an_array)
     return an_array.sort_by{ |x| normalize(x) }
   end  
 
-  def self.normalize(version)
-    version.to_s.scan(%r/[0-9a-zA-Z]+/o).map{|i| NumberElement.new(i)}
+  # Convert the given number into and object that can be sorted
+  # naturally. 
+  # @param [String] number the number in complex form such as 1.2a.3.
+  # @return [Array<NumberElement>] an array of NumberElements which are
+  #         able to be sorted naturally via a normal 'sort'.
+  def self.normalize(number)
+    number.to_s.scan(%r/[0-9a-zA-Z]+/o).map{|i| NumberElement.new(i)}
   end
 
 
