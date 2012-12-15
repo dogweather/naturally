@@ -6,7 +6,7 @@ for the motivations to make this library.
 
 I got most of this code from an open source project, but I forget which. (!) I then made
 a few changes to handle the particular types of numbers that come up in statutes, such
-as *1, 1a, 2, etc.*
+as *335.1, 336, 336a*, etc.
 
 
 ## Installation
@@ -23,9 +23,15 @@ Or install it yourself as:
 
     $ gem install naturally
 
+
 ## Usage
 
-See [the spec for examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
+```Ruby
+Naturally.sort(['1.1', '1.10', '1.2'])
+```
+
+See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
+
 
 ## Contributing
 
