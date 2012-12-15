@@ -27,7 +27,22 @@ Or install it yourself as:
 ## Usage
 
 ```Ruby
+# Sort a simple array of strings
 Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
+
+# Sort an array of objects by one attribute
+objects.sort_by{ |o| Naturally.normalize(o.number) }
+Thing = Struct.new(:number, :name)
+objects = [
+  Thing.new('1.1', 'color'),
+  Thing.new('1.2', 'size'),
+  Thing.new('1.1.1', 'opacity'),
+  Thing.new('1.1.2', 'lightness'),
+  Thing.new('1.10', 'hardness'),
+  Thing.new('2.1', 'weight'),
+  Thing.new('1.3', 'shape')
+  ]
+sorted = objects.sort_by{ |o| Naturally.normalize(o.number) }
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).

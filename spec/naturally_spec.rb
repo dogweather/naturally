@@ -32,4 +32,29 @@ describe Naturally do
       Naturally.sort(a).should == b
     end
   end
+  
+  describe '#normalize' do
+    it 'enables sorting objects by one particular attribute' do
+      Thing = Struct.new(:number, :name)
+      objects = [
+        Thing.new('1.1', 'color'),
+        Thing.new('1.2', 'size'),
+        Thing.new('1.1.1', 'opacity'),
+        Thing.new('1.1.2', 'lightness'),
+        Thing.new('1.10', 'hardness'),
+        Thing.new('2.1', 'weight'),
+        Thing.new('1.3', 'shape')
+        ]
+      sorted = objects.sort_by{ |o| Naturally.normalize(o.number) }
+      sorted.map{|o| o.name}.should == %w[
+        color
+        opacity
+        lightness
+        size
+        shape
+        hardness
+        weight
+        ]
+    end
+  end
 end
