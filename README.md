@@ -4,8 +4,8 @@ Natural sorting with support for legal document numbering.
 See [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/)
 for the motivations to make this library.
 
-I got most of this code from an open source project, but I forget which. (!) I then made
-a few changes to handle the particular types of numbers that come up in statutes, such
+The core of the search is [from here](https://github.com/ahoward/version_sorter). I then made
+several changes to handle the particular types of numbers that come up in statutes, such
 as *335.1, 336, 336a*, etc.
 
 
