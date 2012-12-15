@@ -9,7 +9,7 @@ module Naturally
     return an_array.sort_by{ |x| normalize(x) }
   end  
 
-  # Convert the given number into and object that can be sorted
+  # Convert the given number into an object that can be sorted
   # naturally. 
   # @param [String] number the number in complex form such as 1.2a.3.
   # @return [Array<NumberElement>] an array of NumberElements which are
