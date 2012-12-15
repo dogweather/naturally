@@ -31,7 +31,6 @@ Or install it yourself as:
 Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
 
 # Sort an array of objects by one attribute
-objects.sort_by{ |o| Naturally.normalize(o.number) }
 Thing = Struct.new(:number, :name)
 objects = [
   Thing.new('1.1', 'color'),
@@ -42,7 +41,14 @@ objects = [
   Thing.new('2.1', 'weight'),
   Thing.new('1.3', 'shape')
   ]
-sorted = objects.sort_by{ |o| Naturally.normalize(o.number) }
+objects.sort_by{ |o| Naturally.normalize(o.number) }
+# => [#<struct Thing number="1.1", name="color">,
+      #<struct Thing number="1.1.1", name="opacity">,
+      #<struct Thing number="1.1.2", name="lightness">,
+      #<struct Thing number="1.2", name="size">,
+      #<struct Thing number="1.3", name="shape">,
+      #<struct Thing number="1.10", name="hardness">,
+      #<struct Thing number="2.1", name="weight">]
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
