@@ -19,7 +19,7 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it outside of bundler with:
 
     $ gem install naturally
 
