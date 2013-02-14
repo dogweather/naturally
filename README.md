@@ -27,19 +27,29 @@ Or install it outside of bundler with:
 ## Usage
 
 ```Ruby
+require 'naturally'
+
 # Sort a simple array of strings
 Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
+```
 
+Usually, however, the library is used to sort an array of some kind of
+object:
+
+
+```Ruby
 # Sort an array of objects by one attribute
 Thing = Struct.new(:number, :name)
 objects = [
-  Thing.new('1.1', 'Oregon'),
-  Thing.new('1.2', 'Washington'),
+  Thing.new('1',     'USA'),
+  Thing.new('2',     'Canada'),
+  Thing.new('1.1',   'Oregon'),
+  Thing.new('1.2',   'Washington'),
   Thing.new('1.1.1', 'Portland'),
-  Thing.new('1.1.2', 'Eugene'),
-  Thing.new('1.10', 'Texas'),
-  Thing.new('2.1', 'British Columbia'),
-  Thing.new('1.3', 'California')
+  Thing.new('1.10',  'Texas'),
+  Thing.new('2.1',   'British Columbia'),
+  Thing.new('1.3',   'California'),
+  Thing.new('1.1.2', 'Eugene')
   ]
 objects.sort_by{ |o| Naturally.normalize(o.number) }
 # => [#<struct Thing number="1.1", name="Oregon">,
@@ -48,6 +58,7 @@ objects.sort_by{ |o| Naturally.normalize(o.number) }
       #<struct Thing number="1.2", name="Washington">,
       #<struct Thing number="1.3", name="California">,
       #<struct Thing number="1.10", name="Texas">,
+      #<struct Thing number="2", name="Canada">,
       #<struct Thing number="2.1", name="British Columbia">]
 ```
 
