@@ -52,14 +52,16 @@ objects = [
   Thing.new('1.1.2', 'Eugene')
   ]
 objects.sort_by{ |o| Naturally.normalize(o.number) }
-# => [#<struct Thing number="1.1", name="Oregon">,
-      #<struct Thing number="1.1.1", name="Portland">,
-      #<struct Thing number="1.1.2", name="Eugene">,
-      #<struct Thing number="1.2", name="Washington">,
-      #<struct Thing number="1.3", name="California">,
-      #<struct Thing number="1.10", name="Texas">,
-      #<struct Thing number="2", name="Canada">,
-      #<struct Thing number="2.1", name="British Columbia">]
+
+# Results in:
+[#<struct Thing number="1.1", name="Oregon">,
+ #<struct Thing number="1.1.1", name="Portland">,
+ #<struct Thing number="1.1.2", name="Eugene">,
+ #<struct Thing number="1.2", name="Washington">,
+ #<struct Thing number="1.3", name="California">,
+ #<struct Thing number="1.10", name="Texas">,
+ #<struct Thing number="2", name="Canada">,
+ #<struct Thing number="2.1", name="British Columbia">]
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
