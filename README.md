@@ -33,22 +33,22 @@ Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
 # Sort an array of objects by one attribute
 Thing = Struct.new(:number, :name)
 objects = [
-  Thing.new('1.1', 'color'),
-  Thing.new('1.2', 'size'),
-  Thing.new('1.1.1', 'opacity'),
-  Thing.new('1.1.2', 'lightness'),
-  Thing.new('1.10', 'hardness'),
-  Thing.new('2.1', 'weight'),
-  Thing.new('1.3', 'shape')
+  Thing.new('1.1', 'Oregon'),
+  Thing.new('1.2', 'Washington'),
+  Thing.new('1.1.1', 'Portland'),
+  Thing.new('1.1.2', 'Eugene'),
+  Thing.new('1.10', 'Texas'),
+  Thing.new('2.1', 'British Columbia'),
+  Thing.new('1.3', 'California')
   ]
 objects.sort_by{ |o| Naturally.normalize(o.number) }
-# => [#<struct Thing number="1.1", name="color">,
-      #<struct Thing number="1.1.1", name="opacity">,
-      #<struct Thing number="1.1.2", name="lightness">,
-      #<struct Thing number="1.2", name="size">,
-      #<struct Thing number="1.3", name="shape">,
-      #<struct Thing number="1.10", name="hardness">,
-      #<struct Thing number="2.1", name="weight">]
+# => [#<struct Thing number="1.1", name="Oregon">,
+      #<struct Thing number="1.1.1", name="Portland">,
+      #<struct Thing number="1.1.2", name="Eugene">,
+      #<struct Thing number="1.2", name="Washington">,
+      #<struct Thing number="1.3", name="California">,
+      #<struct Thing number="1.10", name="Texas">,
+      #<struct Thing number="2.1", name="British Columbia">]
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
