@@ -2,7 +2,7 @@
 
 Natural sorting with added support for legal document numbering. 
 See [Sorting for Humans : Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/)
-for the motivations to make this library.
+for the motivations to make this library. This is also the kind of ordering you want if you're sorting version numbers.
 
 The core of the search is [from here](https://github.com/ahoward/version_sorter). I then made
 several changes to handle the particular types of numbers that come up in statutes, such
@@ -54,14 +54,14 @@ objects = [
 objects.sort_by{ |o| Naturally.normalize(o.number) }
 
 # Results in:
-[#<struct Thing number="1.1", name="Oregon">,
- #<struct Thing number="1.1.1", name="Portland">,
- #<struct Thing number="1.1.2", name="Eugene">,
- #<struct Thing number="1.2", name="Washington">,
- #<struct Thing number="1.3", name="California">,
- #<struct Thing number="1.10", name="Texas">,
- #<struct Thing number="2", name="Canada">,
- #<struct Thing number="2.1", name="British Columbia">]
+[<struct Thing number="1.1", name="Oregon">,
+ <struct Thing number="1.1.1", name="Portland">,
+ <struct Thing number="1.1.2", name="Eugene">,
+ <struct Thing number="1.2", name="Washington">,
+ <struct Thing number="1.3", name="California">,
+ <struct Thing number="1.10", name="Texas">,
+ <struct Thing number="2", name="Canada">,
+ <struct Thing number="2.1", name="British Columbia">]
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
