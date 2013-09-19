@@ -12,7 +12,7 @@ module Naturally
   # Convert the given number into an object that can be sorted
   # naturally. 
   # @param [String] number the number in complex form such as 1.2a.3.
-  # @return [Array<NumberElement>] an array of NumberElements which are
+  # @return [Array<NumberElement>] an array of NumberElements which is
   #         able to be sorted naturally via a normal 'sort'.
   def self.normalize(number)
     number.to_s.scan(%r/[0-9a-zA-Z]+/o).map{|i| NumberElement.new(i)}
@@ -32,7 +32,7 @@ module Naturally
     def <=>(other)
       if pure_integer? && other.pure_integer?
         return @val.to_i <=> other.val.to_i
-      elsif mixed? || other.mixed?
+      elsif numbers_with_letters? || other.numbers_with_letters?
         return simple_normalize(@val) <=> simple_normalize(other.val)
       else
         return @val <=> other.val
@@ -43,7 +43,7 @@ module Naturally
       @val =~ /^\d+$/
     end
     
-    def mixed?
+    def numbers_with_letters?
       val =~ /^\d+[a-zA-Z]+$/
     end
     
