@@ -61,11 +61,11 @@ module Naturally
       end
     end
 
-    def reverse_simple_normalize(_value)
-      if _value =~ /^([a-zA-Z]+)(\d+)$/
+    def reverse_simple_normalize(n)
+      if n =~ /^([a-zA-Z]+)(\d+)$/
         return [$1, $2.to_i]
       else
-        return [_value.to_s]
+        return [n.to_s]
       end
     end
   end
