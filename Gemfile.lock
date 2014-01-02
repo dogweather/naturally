@@ -1,12 +1,12 @@
 PATH
   remote: .
   specs:
-    naturally (1.0.4)
+    naturally (1.0.5)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    diff-lcs (1.2.4)
+    diff-lcs (1.2.5)
     rake (10.1.1)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
