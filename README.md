@@ -9,6 +9,9 @@ The core of the search is [from here](https://github.com/ahoward/version_sorter)
 several changes to handle the particular types of numbers that come up in statutes, such
 as *335.1, 336, 336a*, etc.
 
+`Naturally` will also sort "numbers" in college course code format such as
+*MATH101, MATH102, ...*. See the specs for examples.
+
 
 ## Installation
 

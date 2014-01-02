@@ -25,6 +25,12 @@ describe Naturally do
       b = %w[335 335.1 336 336a 337 337.1 337.2 337.15 337a]
       Naturally.sort(a).should == b
     end
+
+    it 'sorts when letters have numbers in them' do
+      a = %w[PC1, PC3, PC5, PC7, PC9, PC10, PC11, PC12, PC13, PC14, PROF2, PBLI, SBP1, SBP3]
+      b = %w[PBLI, PC1, PC3, PC5, PC7, PC9, PC10, PC11, PC12, PC13, PC14, PROF2, SBP1, SBP3]
+      Naturally.sort(a).should == b
+    end
     
     it 'sorts double digits with letters correctly' do
       a = %w[12a 12b 12c 13a 13b 2 3 4 5 10 11 12]
