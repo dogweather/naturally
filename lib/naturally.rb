@@ -73,5 +73,4 @@ module Naturally
       end
     end
   end
-  
 end
