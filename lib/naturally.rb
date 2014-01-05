@@ -3,6 +3,7 @@ require "naturally/version"
 module Naturally
   
   # Perform a natural sort.
+  #
   # @param [Array<String>] an_array the list of numbers to sort.
   # @return [Array<String>] the numbers sorted naturally.
   def self.sort(an_array)
@@ -10,7 +11,8 @@ module Naturally
   end  
 
   # Convert the given number into an object that can be sorted
-  # naturally. 
+  # naturally. This object is an array of {NumberElement} instances.
+  #
   # @param [String] number the number in complex form such as 1.2a.3.
   # @return [Array<NumberElement>] an array of NumberElements which is
   #         able to be sorted naturally via a normal 'sort'.
@@ -21,6 +23,9 @@ module Naturally
 
   private
 
+  # An entity which can be compared to other like elements for
+  # sorting in an array. It's an object representing
+  # a value which implements the {Comparable} interface.
   class NumberElement
     include Comparable
     attr_accessor :val
