@@ -1,7 +1,6 @@
-require "naturally/version"
+require 'naturally/version'
 
 module Naturally
-  
   # Perform a natural sort.
   #
   # @param [Array<String>] an_array the list of numbers to sort.
