@@ -37,7 +37,7 @@ require 'naturally'
 Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
 ```
 
-Usually, however, the library is usually used to sort an array of objects:
+Usually the library is used to sort an array of objects:
 
 
 ```Ruby
