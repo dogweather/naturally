@@ -63,4 +63,20 @@ describe Naturally do
         ]
     end
   end
+
+  describe '#sort_naturally_by' do
+    it 'sorts by an attribute' do
+      Version = Struct.new(:name, :version)
+      releases = [
+        Version.new('Saucy Salamander', '13.10'),
+        Version.new('Raring Ringtail', '13.04'),
+        Version.new('Precise Pangolin', '12.04.4'),
+        Version.new('Maverick Meerkat', '10.10'),
+        Version.new('Quantal Quetzal', '12.10'),
+        Version.new('Lucid Lynx', '10.04.4')
+      ]
+      sorted = Naturally.sort_by(releases, :version)
+      expect(sorted.map(&:name)).to eq ['Lucid Lynx', 'Maverick Meerkat', 'Precise Pangolin', 'Quantal Quetzal', 'Raring Ringtail', 'Saucy Salamander']
+    end
+  end
 end
