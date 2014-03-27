@@ -43,7 +43,10 @@ Usually, however, the library is usually used to sort an array of objects:
 ```Ruby
   describe '#sort_naturally_by' do
     it 'sorts by an attribute' do
+      # Define a new simple object for storing Ubuntu versions
       UbuntuVersion = Struct.new(:name, :version)
+      
+      # Create an array
       releases = [
         UbuntuVersion.new('Saucy Salamander', '13.10'),
         UbuntuVersion.new('Raring Ringtail',  '13.04'),
@@ -52,7 +55,11 @@ Usually, however, the library is usually used to sort an array of objects:
         UbuntuVersion.new('Quantal Quetzal',  '12.10'),
         UbuntuVersion.new('Lucid Lynx',       '10.04.4')
       ]
+      
+      # Sort by version number
       sorted = Naturally.sort_by(releases, :version)
+      
+      # Check what we have
       expect(sorted.map(&:name)).to eq [
         'Lucid Lynx',
         'Maverick Meerkat',
