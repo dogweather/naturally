@@ -43,29 +43,29 @@ object:
 
 ```Ruby
 # Sort an array of objects by one attribute
-Thing = Struct.new(:number, :name)
-objects = [
-  Thing.new('1',     'USA'),
-  Thing.new('2',     'Canada'),
-  Thing.new('1.1',   'Oregon'),
-  Thing.new('1.2',   'Washington'),
-  Thing.new('1.1.1', 'Portland'),
-  Thing.new('1.10',  'Texas'),
-  Thing.new('2.1',   'British Columbia'),
-  Thing.new('1.3',   'California'),
-  Thing.new('1.1.2', 'Eugene')
+Place = Struct.new(:number, :name)
+places = [
+  Place.new('1',     'USA'),
+  Place.new('2',     'Canada'),
+  Place.new('1.1',   'Oregon'),
+  Place.new('1.2',   'Washington'),
+  Place.new('1.1.1', 'Portland'),
+  Place.new('1.10',  'Texas'),
+  Place.new('2.1',   'British Columbia'),
+  Place.new('1.3',   'California'),
+  Place.new('1.1.2', 'Eugene')
   ]
-objects.sort_by{ |o| Naturally.normalize(o.number) }
+Naturally.sort_by(places, :number)  # =>
 
-# Results in:
-[<struct Thing number="1.1", name="Oregon">,
- <struct Thing number="1.1.1", name="Portland">,
- <struct Thing number="1.1.2", name="Eugene">,
- <struct Thing number="1.2", name="Washington">,
- <struct Thing number="1.3", name="California">,
- <struct Thing number="1.10", name="Texas">,
- <struct Thing number="2", name="Canada">,
- <struct Thing number="2.1", name="British Columbia">]
+[<struct Place number="1",     name="USA">,
+ <struct Place number="1.1",   name="Oregon">,
+ <struct Place number="1.1.1", name="Portland">,
+ <struct Place number="1.1.2", name="Eugene">,
+ <struct Place number="1.2",   name="Washington">,
+ <struct Place number="1.3",   name="California">,
+ <struct Place number="1.10",  name="Texas">,
+ <struct Place number="2",     name="Canada">,
+ <struct Place number="2.1",   name="British Columbia">]
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
