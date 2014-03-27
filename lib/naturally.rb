@@ -33,17 +33,33 @@ module Naturally
     end
 
     def <=>(other)
-      if pure_integer? && other.pure_integer?
+      if both_are_integers_without_letters(other)
         return @val.to_i <=> other.val.to_i
-      elsif numbers_with_letters? || other.numbers_with_letters?
-        return simple_normalize(@val) <=> simple_normalize(other.val)
-      elsif letters_with_numbers? || other.letters_with_numbers?
-        return reverse_simple_normalize(@val) <=> reverse_simple_normalize(other.val)
-      else
-        return @val <=> other.val
       end
+
+      if either_is_numbers_followed_by_letters(other)
+        return simple_normalize(@val) <=> simple_normalize(other.val)
+      end
+
+      if either_is_letters_followed_by_numbers(other)
+        return reverse_simple_normalize(@val) <=> reverse_simple_normalize(other.val)
+      end
+
+      return @val <=> other.val
     end
-    
+
+    def either_is_letters_followed_by_numbers(other)
+      letters_with_numbers? || other.letters_with_numbers?
+    end
+
+    def either_is_numbers_followed_by_letters(other)
+      numbers_with_letters? || other.numbers_with_letters?
+    end
+
+    def both_are_integers_without_letters(other)
+      pure_integer? && other.pure_integer?
+    end
+
     def pure_integer?
       @val =~ /^\d+$/
     end
