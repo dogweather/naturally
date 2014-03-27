@@ -42,30 +42,28 @@ object:
 
 
 ```Ruby
-# Sort an array of objects by one attribute
-Thing = Struct.new(:number, :name)
-objects = [
-  Thing.new('1',     'USA'),
-  Thing.new('2',     'Canada'),
-  Thing.new('1.1',   'Oregon'),
-  Thing.new('1.2',   'Washington'),
-  Thing.new('1.1.1', 'Portland'),
-  Thing.new('1.10',  'Texas'),
-  Thing.new('2.1',   'British Columbia'),
-  Thing.new('1.3',   'California'),
-  Thing.new('1.1.2', 'Eugene')
-  ]
-objects.sort_by{ |o| Naturally.normalize(o.number) }
-
-# Results in:
-[<struct Thing number="1.1", name="Oregon">,
- <struct Thing number="1.1.1", name="Portland">,
- <struct Thing number="1.1.2", name="Eugene">,
- <struct Thing number="1.2", name="Washington">,
- <struct Thing number="1.3", name="California">,
- <struct Thing number="1.10", name="Texas">,
- <struct Thing number="2", name="Canada">,
- <struct Thing number="2.1", name="British Columbia">]
+  describe '#sort_naturally_by' do
+    it 'sorts by an attribute' do
+      UbuntuVersion = Struct.new(:name, :version)
+      releases = [
+        UbuntuVersion.new('Saucy Salamander', '13.10'),
+        UbuntuVersion.new('Raring Ringtail',  '13.04'),
+        UbuntuVersion.new('Precise Pangolin', '12.04.4'),
+        UbuntuVersion.new('Maverick Meerkat', '10.10'),
+        UbuntuVersion.new('Quantal Quetzal',  '12.10'),
+        UbuntuVersion.new('Lucid Lynx',       '10.04.4')
+      ]
+      sorted = Naturally.sort_by(releases, :version)
+      expect(sorted.map(&:name)).to eq [
+        'Lucid Lynx',
+        'Maverick Meerkat',
+        'Precise Pangolin',
+        'Quantal Quetzal',
+        'Raring Ringtail',
+        'Saucy Salamander'
+      ]
+    end
+  end
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).

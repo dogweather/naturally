@@ -8,12 +8,6 @@ describe Naturally do
       Naturally.sort(a).should == b
     end
     
-    it 'sorts a smaller array of strings nicely as if they were legal numbers' do
-      a = %w[676 676.1 676.11 676.12 676.2 676.3 676.9]
-      b = %w[676 676.1 676.2 676.3 676.9 676.11 676.12]
-      Naturally.sort(a).should == b
-    end
-    
     it 'sorts a more complex list of strings' do
       a = %w[350 351 352 352.1 352.5 353.1 354 354.3 354.4 354.45 354.5]
       b = %w[350 351 352 352.1 352.5 353.1 354 354.3 354.4 354.5 354.45]
@@ -39,28 +33,26 @@ describe Naturally do
     end
   end
   
-  describe '#normalize' do
-    it 'enables sorting objects by one particular attribute' do
-      Thing = Struct.new(:number, :name)
-      objects = [
-        Thing.new('1.1', 'color'),
-        Thing.new('1.2', 'size'),
-        Thing.new('1.1.1', 'opacity'),
-        Thing.new('1.1.2', 'lightness'),
-        Thing.new('1.10', 'hardness'),
-        Thing.new('2.1', 'weight'),
-        Thing.new('1.3', 'shape')
-        ]
-      sorted = objects.sort_by{ |o| Naturally.normalize(o.number) }
-      sorted.map{|o| o.name}.should == %w[
-        color
-        opacity
-        lightness
-        size
-        shape
-        hardness
-        weight
-        ]
+  describe '#sort_naturally_by' do
+    it 'sorts by an attribute' do
+      UbuntuVersion = Struct.new(:name, :version)
+      releases = [
+        UbuntuVersion.new('Saucy Salamander', '13.10'),
+        UbuntuVersion.new('Raring Ringtail',  '13.04'),
+        UbuntuVersion.new('Precise Pangolin', '12.04.4'),
+        UbuntuVersion.new('Maverick Meerkat', '10.10'),
+        UbuntuVersion.new('Quantal Quetzal',  '12.10'),
+        UbuntuVersion.new('Lucid Lynx',       '10.04.4')
+      ]
+      sorted = Naturally.sort_by(releases, :version)
+      expect(sorted.map(&:name)).to eq [
+        'Lucid Lynx',
+        'Maverick Meerkat',
+        'Precise Pangolin',
+        'Quantal Quetzal',
+        'Raring Ringtail',
+        'Saucy Salamander'
+      ]
     end
   end
 end
