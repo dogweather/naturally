@@ -51,8 +51,8 @@ describe Naturally do
         Thing.new('2.1', 'weight'),
         Thing.new('1.3', 'shape')
         ]
-      sorted = objects.sort_by{ |o| Naturally.normalize(o.number) }
-      sorted.map{|o| o.name}.should == %w[
+      sorted = objects.sort_by { |o| Naturally.normalize(o.number) }
+      sorted.map(&:name).should == %w(
         color
         opacity
         lightness
@@ -60,23 +60,30 @@ describe Naturally do
         shape
         hardness
         weight
-        ]
+        )
     end
   end
 
   describe '#sort_naturally_by' do
     it 'sorts by an attribute' do
-      Version = Struct.new(:name, :version)
+      UbuntuVersion = Struct.new(:name, :version)
       releases = [
-        Version.new('Saucy Salamander', '13.10'),
-        Version.new('Raring Ringtail', '13.04'),
-        Version.new('Precise Pangolin', '12.04.4'),
-        Version.new('Maverick Meerkat', '10.10'),
-        Version.new('Quantal Quetzal', '12.10'),
-        Version.new('Lucid Lynx', '10.04.4')
+        UbuntuVersion.new('Saucy Salamander', '13.10'),
+        UbuntuVersion.new('Raring Ringtail',  '13.04'),
+        UbuntuVersion.new('Precise Pangolin', '12.04.4'),
+        UbuntuVersion.new('Maverick Meerkat', '10.10'),
+        UbuntuVersion.new('Quantal Quetzal',  '12.10'),
+        UbuntuVersion.new('Lucid Lynx',       '10.04.4')
       ]
       sorted = Naturally.sort_by(releases, :version)
-      expect(sorted.map(&:name)).to eq ['Lucid Lynx', 'Maverick Meerkat', 'Precise Pangolin', 'Quantal Quetzal', 'Raring Ringtail', 'Saucy Salamander']
+      expect(sorted.map(&:name)).to eq [
+        'Lucid Lynx',
+        'Maverick Meerkat',
+        'Precise Pangolin',
+        'Quantal Quetzal',
+        'Raring Ringtail',
+        'Saucy Salamander'
+      ]
     end
   end
 end

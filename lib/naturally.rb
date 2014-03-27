@@ -9,6 +9,10 @@ module Naturally
     return an_array.sort_by { |x| normalize(x) }
   end  
 
+  def self.sort_by(an_array, an_attribute)
+    an_array.sort_by{|i| Naturally.normalize(i.send(an_attribute))}
+  end
+
   # Convert the given number into an object that can be sorted
   # naturally. This object is an array of {NumberElement} instances.
   #
