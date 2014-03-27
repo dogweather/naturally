@@ -60,11 +60,6 @@ module Naturally
       pure_integer? && other.pure_integer?
     end
 
-    #
-    #def both_are_integers(other)
-    #  pure_integer? && other.pure_integer?
-    #end
-    
     def pure_integer?
       @val =~ /^\d+$/
     end
