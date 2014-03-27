@@ -72,7 +72,7 @@ Usually the library is used to sort an array of objects:
   end
 ```
 
-See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
+See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb) of what Naturally can sort.
 
 
 ## Contributing
