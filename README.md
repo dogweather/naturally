@@ -41,8 +41,6 @@ Usually the library is used to sort an array of objects:
 
 
 ```Ruby
-  describe '#sort_naturally_by' do
-    it 'sorts by an attribute' do
       # Define a new simple object for storing Ubuntu versions
       UbuntuVersion = Struct.new(:name, :version)
       
@@ -68,8 +66,6 @@ Usually the library is used to sort an array of objects:
         'Raring Ringtail',
         'Saucy Salamander'
       ]
-    end
-  end
 ```
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb) of what Naturally can sort.
