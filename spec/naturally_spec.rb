@@ -75,7 +75,7 @@ describe Naturally do
       ]
     end
 
-    it 'sorts by an attribute which contain unicode characters' do
+    it 'sorts by an attribute which contains unicode characters' do
       Thing = Struct.new(:number, :name)
       objects = [
         Thing.new('1.1', 'Москва'),
