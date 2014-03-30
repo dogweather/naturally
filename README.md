@@ -2,11 +2,9 @@
 [![Gem Version](https://badge.fury.io/rb/naturally.png)](http://badge.fury.io/rb/naturally) [![Build Status](https://travis-ci.org/dogweather/naturally.png)](https://travis-ci.org/dogweather/naturally) [![Code Climate](https://codeclimate.com/github/dogweather/naturally.png)](https://codeclimate.com/github/dogweather/naturally)
 
 Natural (version number) sorting with added support for **legal document numbering** and **Unicode**.
-See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and the Weblaws.org post [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/)
-for the motivations to make this library.
+See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and the Weblaws.org post [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/).
 
-The core of the search is [from here](https://github.com/ahoward/version_sorter). I then made
-several changes to handle the particular types of numbers that come up in statutes, such
+The core of the search is [from here](https://github.com/ahoward/version_sorter). It's since been extended to handle the particular types of numbers that come up in statutes, such
 as *335.1, 336, 336a*, etc.
 
 `Naturally` will also sort "numbers" in college course code format such as
