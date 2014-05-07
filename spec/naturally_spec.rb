@@ -9,7 +9,7 @@ describe Naturally do
       b = %w[676 676.1 676.2 676.3 676.9 676.10 676.11 676.12]
       Naturally.sort(a).should == b
     end
-    
+
     it 'sorts a more complex list of strings' do
       a = %w[350 351 352 352.1 352.5 353.1 354 354.3 354.4 354.45 354.5]
       b = %w[350 351 352 352.1 352.5 353.1 354 354.3 354.4 354.5 354.45]
@@ -52,7 +52,7 @@ describe Naturally do
       Naturally.sort(a).should == b
     end
   end
-  
+
   describe '#sort_naturally_by' do
     it 'sorts by an attribute' do
       UbuntuVersion = Struct.new(:name, :version)
@@ -75,7 +75,7 @@ describe Naturally do
       ]
     end
 
-    it 'sorts by an attribute which contains unicode characters' do
+    it 'sorts by an attribute which contains unicode' do
       Thing = Struct.new(:number, :name)
       objects = [
         Thing.new('1.1', 'Москва'),
