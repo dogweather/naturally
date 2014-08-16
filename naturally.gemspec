@@ -6,6 +6,7 @@ require 'naturally/version'
 Gem::Specification.new do |gem|
   gem.name          = "naturally"
   gem.version       = Naturally::VERSION
+  gem.license       = 'MIT'
   gem.authors       = ["Robb Shecter"]
   gem.email         = ["robb@weblaws.org"]
   gem.summary       = %q{Sorts numbers according to the way people are used to seeing them.}
