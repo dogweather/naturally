@@ -32,7 +32,7 @@ module Naturally
   # @return [Array<Segment>] an array of Segments which
   #         can be sorted naturally via a standard #sort.
   def self.normalize(complex_number)
-    tokens = complex_number.to_s.scan(/\p{Word}+/)
+    tokens = complex_number.to_s.gsub(/\_/,'').scan(/\p{Word}+/)
     tokens.map { |t| Segment.new(t) }
   end
 end

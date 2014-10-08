@@ -62,6 +62,12 @@ describe Naturally do
         to_this: %w(2 3 4 5 10 11 12 12а 12б 12в 13а 13б)
       )
     end
+
+    it 'sorts strings suffixed with underscore and numbers correctly' do
+      a = %w[item_10 item_11 item_1 item_7 item_5 item_3 item_4 item_6 item_2]
+      b = %w[item_1 item_2 item_3 item_4 item_5 item_6 item_7 item_10 item_11]
+      Naturally.sort(a).should == b
+    end
   end
 
   describe '#sort_naturally_by' do
