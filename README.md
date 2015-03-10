@@ -68,6 +68,10 @@ expect(sorted.map(&:name)).to eq [
 
 See [the spec for more examples](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb) of what Naturally can sort.
 
+## Related Work
+
+* [GitHub's Version sorter](https://github.com/github/version_sorter)
+
 
 ## Contributing
 
