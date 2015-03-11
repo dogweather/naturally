@@ -29,8 +29,8 @@ module Naturally
   # This enables it to be sorted against other arrays
   # by the standard #sort method.
   #
-  # For example:
-  # '1.2a.3' becomes [Segment<'1'>, Segment<'2a'>, Segment<'3'>]
+  # For example, '1.2a.3' becomes
+  # [Segment<'1'>, Segment<'2a'>, Segment<'3'>]
   #
   # @param [String] complex_number the number in a hierarchical form
   #                 such as 1.2a.3.
