@@ -49,7 +49,7 @@ See [the spec for more examples](https://github.com/dogweather/naturally/blob/ma
 
 ## Related Work
 
-* [ahoward/version_sorter](https://github.com/ahoward/version_sorter), what I based this gem on.
+* [ahoward/version_sorter](https://github.com/ahoward/version_sorter), the starting point for the `naturally` gem.
 * [GitHub's Version sorter](https://github.com/github/version_sorter)
 
 
