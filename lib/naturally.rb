@@ -2,11 +2,6 @@ require 'naturally/segment'
 
 # A module which performs natural sorting on a variety of number
 # formats. (See the specs for examples.)
-#
-# It achieves this by capitalizing on Ruby's behavior when
-# comparing arrays: The module sorts arrays of segmented numbers such as
-# ['1.9', '1.9a', '1.10'] by comparing them in their array forms.
-# I.e., approximately [['1', '9'], ['1, '9a'], ['1', '10']]
 module Naturally
   # Perform a natural sort.
   #
