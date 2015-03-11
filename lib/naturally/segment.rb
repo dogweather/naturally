@@ -26,6 +26,7 @@ module Naturally
     # @example Section 633a of the ADEA
     #   Segment.new('633a').to_array #=> [633, "a"]
     def to_array
+      # TODO: Refactor, probably via polymorphism
       if @val =~ /^(\p{Digit}+)(\p{Alpha}+)$/
         [$1.to_i, $2]
       elsif @val =~ /^(\p{Alpha}+)(\p{Digit}+)$/
