@@ -11,7 +11,7 @@ See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorr
 require 'naturally'
 
 # Sort a simple array of strings
-Naturally.sort(["1.1", "1.10", "1.2"])  # => ["1.1", "1.2", "1.10"]
+Naturally.sort(["335a", "335", "335.1"])  # => ["335", "335.1", "335a"]
 ```
 
 Usually the library is used to sort an array of objects:
