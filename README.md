@@ -7,7 +7,7 @@ See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorr
 ##Installation
 
 ```Shell
-$ gem install rspec-webservice_matchers
+$ gem install naturally
 ```
 
 ## Usage
