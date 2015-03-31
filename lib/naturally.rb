@@ -20,6 +20,17 @@ module Naturally
     an_array.sort_by { |obj| normalize(obj.send(an_attribute)) }
   end
 
+  # Sort an array of objects "naturally", yielding each object
+  # to the block to obtain the sort key.
+  #
+  # @param [Array<Object>] an_array the list of objects to sort.
+  # @param [Block] &block a block that should evaluate to the
+  #        sort key for the yielded object
+  # @return [Array<Object>] the objects in natural sort order.
+  def self.sort_by_block(an_array, &block)
+    an_array.sort_by { |obj| normalize(yield(obj)) }
+  end
+
   # Convert the given number an array of {Segment}s.
   # This enables it to be sorted against other arrays
   # by the standard #sort method.
