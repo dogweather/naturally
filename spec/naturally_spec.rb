@@ -120,7 +120,7 @@ describe Naturally do
         {:name => 'Quantal Quetzal',  :version => '12.10'},
         {:name => 'Lucid Lynx',       :version => '10.04.4'}
       ]
-      actual = Naturally.sort_by_block(releases){|r| r[:version]}
+      actual = Naturally.sort_by(releases){|r| r[:version]}
       expect(actual.map{|r| r[:name]}).to eq [
         'Lucid Lynx',
         'Maverick Meerkat',
