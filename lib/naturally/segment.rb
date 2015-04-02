@@ -10,7 +10,20 @@ module Naturally
     end
 
     def <=>(other)
-      to_array <=> other.to_array
+      a = to_array
+      b = other.to_array
+
+      # if an integer segment is compared to a string segment, <=> will fail
+      # in this case converting an integer to a string will give desired results
+      array_size = [a.size, b.size].max
+      for i in 0..array_size
+        if(a[i].class == String || b[i].class == String)
+          a[i] = a[i].to_s
+          b[i] = b[i].to_s
+        end
+      end
+
+      a <=> b
     end
 
     # @return [Array] a representation of myself in array form
