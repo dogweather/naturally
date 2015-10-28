@@ -1,7 +1,10 @@
+# coding: utf-8
 require 'naturally'
 
 describe Naturally do
-  def it_sorts(this:, to_this:)
+  def it_sorts(opts = {})
+    this = opts[:this]
+    to_this = opts[:to_this]
     actual = Naturally.sort(this)
     expect(actual).to eq(to_this)
   end

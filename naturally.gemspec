@@ -11,7 +11,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Sorts numbers according to the way people are used to seeing them.}
   gem.description   = %q{Natural Sorting with support for legal numbering, course numbers, and other number/letter mixes.}
   gem.homepage      = "http://github.com/dogweather/naturally"
-  gem.required_ruby_version = '>= 2.1'
+  gem.required_ruby_version = '>= 2.0'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
