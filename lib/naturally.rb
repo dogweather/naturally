@@ -12,11 +12,16 @@ module Naturally
   end
 
   # Sort an array of objects "naturally" by a given attribute.
+  # If block is given, attribute is ignored and each object
+  # is yielded to the block to obtain the sort key.
   #
   # @param [Array<Object>] an_array the list of objects to sort.
   # @param [Symbol] an_attribute the attribute by which to sort.
+  # @param [Block] &block a block that should evaluate to the
+  #        sort key for the yielded object
   # @return [Array<Object>] the objects in natural sort order.
-  def self.sort_by(an_array, an_attribute)
+  def self.sort_by(an_array, an_attribute=nil, &block)
+    return sort_by_block(an_array, &block) if block_given?
     an_array.sort_by { |obj| normalize(obj.send(an_attribute)) }
   end
 
@@ -34,5 +39,17 @@ module Naturally
   def self.normalize(complex_number)
     tokens = complex_number.to_s.gsub(/\_/,'').scan(/\p{Word}+/)
     tokens.map { |t| Segment.new(t) }
+  end
+
+  private
+  # Sort an array of objects "naturally", yielding each object
+  # to the block to obtain the sort key.
+  #
+  # @param [Array<Object>] an_array the list of objects to sort.
+  # @param [Block] &block a block that should evaluate to the
+  #        sort key for the yielded object
+  # @return [Array<Object>] the objects in natural sort order.
+  def self.sort_by_block(an_array, &block)
+    an_array.sort_by { |obj| normalize(yield(obj)) }
   end
 end
