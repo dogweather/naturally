@@ -66,6 +66,13 @@ describe Naturally do
       )
     end
 
+    it 'sorts strings suffixed with underscore and numbers correctly' do
+      it_sorts(
+        this:    %w(item_10 item_11 item_1 item_7 item_5 item_3 item_4 item_6 item_2),
+        to_this: %w(item_1 item_2 item_3 item_4 item_5 item_6 item_7 item_10 item_11)
+      )
+    end
+
     it 'sorts letters with digits correctly' do
       it_sorts(
         this: %w(1 a 2 b 3 c),
