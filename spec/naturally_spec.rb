@@ -153,4 +153,26 @@ describe Naturally do
       ]
     end
   end
+
+  describe '#sort_naturally_by_block' do
+    it 'sorts using a block' do
+      releases = [
+        {:name => 'Saucy Salamander', :version => '13.10'},
+        {:name => 'Raring Ringtail',  :version => '13.04'},
+        {:name => 'Precise Pangolin', :version => '12.04.4'},
+        {:name => 'Maverick Meerkat', :version => '10.10'},
+        {:name => 'Quantal Quetzal',  :version => '12.10'},
+        {:name => 'Lucid Lynx',       :version => '10.04.4'}
+      ]
+      actual = Naturally.sort_by(releases){|r| r[:version]}
+      expect(actual.map{|r| r[:name]}).to eq [
+        'Lucid Lynx',
+        'Maverick Meerkat',
+        'Precise Pangolin',
+        'Quantal Quetzal',
+        'Raring Ringtail',
+        'Saucy Salamander'
+      ]
+    end
+  end
 end
