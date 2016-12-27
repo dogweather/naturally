@@ -1,7 +1,8 @@
 module Naturally
   # An entity which can be compared to other like elements for
   # sorting. It's an object representing
-  # a value which implements the {Comparable} interface.
+  # a value which implements the {Comparable} interface which can
+  # convert itself to an array.
   class Segment
     include Comparable
 
@@ -25,7 +26,7 @@ module Naturally
     # @example a college course code
     #   Segment.new('MATH101').to_array #=> [:str, "MATH", 101]
     #
-    # @example Section 633a of the ADEA
+    # @example Section 633a of the U.S. Age Discrimination in Employment Act
     #   Segment.new('633a').to_array #=> [:int, 633, "a"]
     def to_array
       # TODO: Refactor, probably via polymorphism
