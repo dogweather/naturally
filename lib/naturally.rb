@@ -25,9 +25,9 @@ module Naturally
     an_array.sort_by { |obj| normalize(obj.send(an_attribute)) }
   end
 
-  # Convert the given number an array of {Segment}s.
+  # Convert the given number to an array of {Segment}s.
   # This enables it to be sorted against other arrays
-  # by the standard #sort method.
+  # by the built-in #sort method.
   #
   # For example, '1.2a.3' becomes
   # [Segment<'1'>, Segment<'2a'>, Segment<'3'>]
