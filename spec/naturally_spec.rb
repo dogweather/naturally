@@ -52,6 +52,13 @@ describe Naturally do
       )
     end
 
+    it 'sorts when some are letters only and some are numbers only' do
+      it_sorts(
+      this: %w(999 111 11 zzz bbb aaa ppp 12 222 xxx hhh 1),
+      to_this: %w(1 11 12 111 222 999 aaa bbb hhh ppp xxx zzz)
+      )
+    end
+
     it 'sorts double digits with letters correctly' do
       it_sorts(
         this: %w(12a 12b 12c 13a 13b 2 3 4 5 10 11 12),
