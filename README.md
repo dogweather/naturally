@@ -2,7 +2,7 @@
 [![Gem Version](https://badge.fury.io/rb/naturally.png)](http://badge.fury.io/rb/naturally) [![Build Status](https://travis-ci.org/dogweather/naturally.png)](https://travis-ci.org/dogweather/naturally) [![Code Climate](https://codeclimate.com/github/dogweather/naturally.png)](https://codeclimate.com/github/dogweather/naturally)
 
 Natural (version number) sorting with support for **legal document numbering**, **college course codes**, and **Unicode**.
-See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and the WebLaws.org post [Counting to 10 in Californian](http://www.weblaws.org/blog/2012/08/counting-from-1-to-10-in-californian/).
+See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and the Public.Law post [Counting to 10 in Californian](https://blog.public.law/2012/08/07/counting-from-1-to-10-in-californian/).
 
 ## Installation
 
