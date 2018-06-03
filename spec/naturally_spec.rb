@@ -13,7 +13,7 @@ describe Naturally do
 
   describe '#sort' do
     it 'supports a nicer by: syntax' do
-      UbuntuVersion = Struct.new(:name, :version)
+      UbuntuVersion ||= Struct.new(:name, :version)
       releases = [
         UbuntuVersion.new('Saucy Salamander', '13.10'),
         UbuntuVersion.new('Raring Ringtail',  '13.04'),
@@ -130,7 +130,7 @@ describe Naturally do
 
   describe '#sort_naturally_by' do
     it 'sorts by an attribute' do
-      UbuntuVersion = Struct.new(:name, :version)
+      UbuntuVersion ||= Struct.new(:name, :version)
       releases = [
         UbuntuVersion.new('Saucy Salamander', '13.10'),
         UbuntuVersion.new('Raring Ringtail',  '13.04'),
