@@ -10,6 +10,30 @@ describe Naturally do
   end
 
   describe '#sort' do
+    it 'supports a nicer by: syntax' do
+      UbuntuVersion = Struct.new(:name, :version)
+      releases = [
+        UbuntuVersion.new('Saucy Salamander', '13.10'),
+        UbuntuVersion.new('Raring Ringtail',  '13.04'),
+        UbuntuVersion.new('Precise Pangolin', '12.04.4'),
+        UbuntuVersion.new('Maverick Meerkat', '10.10'),
+        UbuntuVersion.new('Quantal Quetzal',  '12.10'),
+        UbuntuVersion.new('Lucid Lynx',       '10.04.4')
+      ]
+
+      actual = Naturally.sort releases, by: :version
+
+      expect(actual.map(&:name)).to eq [
+                                      'Lucid Lynx',
+                                      'Maverick Meerkat',
+                                      'Precise Pangolin',
+                                      'Quantal Quetzal',
+                                      'Raring Ringtail',
+                                      'Saucy Salamander'
+                                    ]
+    end
+
+
     it 'sorts an array of strings nicely as if they were legal numbers' do
       it_sorts(
         this: %w(676 676.1 676.11 676.12 676.2 676.3 676.9 676.10),
