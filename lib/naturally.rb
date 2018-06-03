@@ -3,12 +3,20 @@ require 'naturally/segment'
 # A module which performs natural sorting on a variety of number
 # formats. (See the specs for examples.)
 module Naturally
-  # Perform a natural sort.
+  # Perform a natural sort. Supports two syntaxes:
+  #
+  # 1. sort(objects)  # Simple arrays
+  # 2. sort(objects, by: some_attribute)  # Complex objects
   #
   # @param [Array<String>] an_array the list of numbers to sort.
+  # @param [by] (optional) an attribute of the array by which to sort.
   # @return [Array<String>] the numbers sorted naturally.
-  def self.sort(an_array)
-    an_array.sort_by { |x| normalize(x) }
+  def self.sort(an_array, by:nil)
+    if by.nil?
+      an_array.sort_by { |x| normalize(x) }
+    else
+      self.sort_by(an_array, by)
+    end
   end
 
   # Sort an array of objects "naturally" by a given attribute.

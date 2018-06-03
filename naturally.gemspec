@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.version       = Naturally::VERSION
   gem.license       = 'MIT'
   gem.authors       = ["Robb Shecter"]
-  gem.email         = ["robb@weblaws.org"]
+  gem.email         = ["robb@public.law"]
   gem.summary       = %q{Sorts numbers according to the way people are used to seeing them.}
   gem.description   = %q{Natural Sorting with support for legal numbering, course numbers, and other number/letter mixes.}
   gem.homepage      = "http://github.com/dogweather/naturally"
