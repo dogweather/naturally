@@ -2,7 +2,7 @@
 [![Gem Version](https://badge.fury.io/rb/naturally.png)](http://badge.fury.io/rb/naturally) [![Build Status](https://travis-ci.org/public-law/naturally.png)](https://travis-ci.org/public-law/naturally) 
 [![Maintainability](https://api.codeclimate.com/v1/badges/0ebf4ef97723f2622105/maintainability)](https://codeclimate.com/github/dogweather/naturally/maintainability)
 
-Natural (version number) sorting with support for **legal document numbering**, **college course codes**, and **Unicode**.
+Natural ("version number") sorting with support for **legal document numbering**, **college course codes**, and **Unicode**.
 See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and the Public.Law post [Counting to 10 in Californian](https://blog.public.law/2012/08/07/counting-from-1-to-10-in-californian/).
 
 ## Installation
@@ -16,8 +16,11 @@ $ gem install naturally
 ```Ruby
 require 'naturally'
 
-# Sort a simple array of strings
+# Sort a simple array of strings with legal numbering
 Naturally.sort(["336", "335a", "335", "335.1"])  # => ["335", "335.1", "335a", "336"]
+
+# Sort version numbers
+Naturally.sort(["13.10", "13.04", "10.10", "10.04.4"])  # => ["10.04.4", "10.10", "13.04", "13.10"]
 ```
 
 Usually the library is used to sort an array of objects:
