@@ -41,7 +41,7 @@ releases = [
 ]
 
 # Sort by version number
-sorted = Naturally.sort releases, by: :version
+sorted = Naturally.sort(releases, by: :version)
 
 # Check what we have
 expect(sorted.map(&:name)).to eq [
