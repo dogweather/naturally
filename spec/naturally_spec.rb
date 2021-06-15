@@ -208,4 +208,38 @@ describe Naturally do
       ]
     end
   end
+
+  describe 'using a collator' do
+    require 'twitter_cldr'
+
+    let(:collator) { TwitterCldr::Collation::Collator.new(:de) }
+
+    it 'sorts unicode characters correctly when using a collator' do
+      unicode_strings = %w( Öl10 b öl3 a Öl1 Öl2 A B )
+      actual = Naturally.sort_with_collator(unicode_strings, collator)
+
+      expect(actual).to eq %w( a A b B öl3 Öl1 Öl2 Öl10 )
+    end
+
+    # https://github.com/dogweather/naturally/issues/20#issuecomment-450617803
+    it 'sorts neither like the Duden nor the telephone book for German' do
+      names = [
+        'Müller, Franziska',
+        'Muller, Inge',
+        'Müller, Hansi',
+        'Muller, Erika',
+        'Mueller, Gerd'
+      ]
+
+      actual = Naturally.sort_with_collator(names, collator)
+
+      expect(actual).to eq [
+        'Mueller, Gerd',
+        'Muller, Erika',
+        'Muller, Inge',
+        'Müller, Franziska',
+        'Müller, Hansi'
+      ]
+    end
+  end
 end

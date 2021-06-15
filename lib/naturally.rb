@@ -33,6 +33,10 @@ module Naturally
     an_array.sort_by { |obj| normalize(obj.send(an_attribute)) }
   end
 
+  def self.sort_with_collator(an_array, collator)
+    an_array.sort_by { |x| normalize(x, collator) }
+  end
+
   # Convert the given number to an array of {Segment}s.
   # This enables it to be sorted against other arrays
   # by the built-in #sort method.
@@ -44,9 +48,9 @@ module Naturally
   #                 such as 1.2a.3.
   # @return [Array<Segment>] an array of Segments which
   #         can be sorted naturally via a standard #sort.
-  def self.normalize(complex_number)
+  def self.normalize(complex_number, collator = nil)
     tokens = complex_number.to_s.gsub(/\_/,'').scan(/\p{Word}+/)
-    tokens.map { |t| Segment.new(t) }
+    tokens.map { |t| Segment.new(t, collator) }
   end
 
   private
