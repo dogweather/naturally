@@ -13,6 +13,8 @@ Gem::Specification.new do |gem|
   gem.homepage      = "http://github.com/dogweather/naturally"
   gem.required_ruby_version = '>= 2.0'
 
+  gem.add_development_dependency 'twitter_cldr'
+
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
