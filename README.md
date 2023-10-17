@@ -9,7 +9,6 @@ Natural ("version number") sorting with support for:
 * **college course codes**, and
 * **Unicode**.
 
-* 
 See Jeff Atwood's [Sorting for Humans: Natural Sort Order](http://www.codinghorror.com/blog/2007/12/sorting-for-humans-natural-sort-order.html) and the Public.Law post [Counting to 10 in Californian](https://blog.public.law/2012/08/07/counting-from-1-to-10-in-californian/).
 
 ## Installation
