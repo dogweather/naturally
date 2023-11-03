@@ -30,11 +30,11 @@ module Naturally
     #   Segment.new('633a').to_array #=> [:int, 633, "a"]
     def to_array
       # TODO: Refactor, probably via polymorphism
-      if @val =~ /^(\p{Digit}+)(\p{Alpha}+)$/
+      if @val =~ /^(-?\p{Digit}+)(\p{Alpha}+)$/
         [:int, $1.to_i, $2]
-      elsif @val =~ /^(\p{Alpha}+)(\p{Digit}+)$/
+      elsif @val =~ /^(\p{Alpha}+)(-?\p{Digit}+)$/
         [:str, $1, $2.to_i]
-      elsif @val =~ /^\p{Digit}+$/
+      elsif @val =~ /^-?\p{Digit}+$/
         [:int, @val.to_i]
       else
         [:str, @val]

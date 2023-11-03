@@ -50,6 +50,20 @@ describe Naturally do
       )
     end
 
+    it 'sorts when numbers are negative' do
+      it_sorts(
+        this:    %w(-2 -1 2 0 1),
+        to_this: %w(-2 -1 0 1 2)
+      )
+    end
+
+    it 'sorts when numbers are negative and have letters' do
+      it_sorts(
+        this:    %w(-2c -2d 2 a-0 1a),
+        to_this: %w(-2c -2d 1a 2 a-0)
+      )
+    end
+
     it 'sorts when numbers have letters in them' do
       it_sorts(
         this:    %w(335 335.1 336a 336 337 337a 337.1 337.15 337.2),
