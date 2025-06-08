@@ -58,7 +58,7 @@ expect(sorted.map(&:name)).to eq [
 ]
 ```
 
-[More examples are in the specs](https://github.com/dogweather/naturally/blob/master/spec/naturally_spec.rb).
+[More examples are in the specs](https://github.com/public-law/naturally/blob/master/spec/naturally_spec.rb).
 
 
 ## Implementation Notes
