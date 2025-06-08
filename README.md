@@ -1,7 +1,5 @@
 # Naturally
 [![Gem Version](https://badge.fury.io/rb/naturally.svg)](https://badge.fury.io/rb/naturally)
-[![Build Status](https://travis-ci.com/dogweather/naturally.svg?branch=master)](https://travis-ci.com/dogweather/naturally)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0ebf4ef97723f2622105/maintainability)](https://codeclimate.com/github/dogweather/naturally/maintainability)
 
 Natural ("version number") sorting with support for:
 
