@@ -61,6 +61,39 @@ expect(sorted.map(&:name)).to eq [
 [More examples are in the specs](https://github.com/public-law/naturally/blob/master/spec/naturally_spec.rb).
 
 
+## `#sort_filenames`
+
+Sorts filenames naturally, treating underscores and dots as separators. Useful for sorting files like images or documents that use numbers, underscores, and dots in their names.
+
+```ruby
+files = [
+  'abc_2.tif',
+  'abc_1_a.tif',
+  'abc_1.zzz',
+  'abc_1_xyz.abc',
+  'abc_2a.tif',
+  'abc.2.tif',
+  'abc.1_a.tif',
+  'abc_2.abc',
+  'abc_1_xyz.abc'
+]
+Naturally.sort_filenames(files)
+# => [
+#   "abc.1_a.tif",
+#   "abc.2.tif",
+#   "abc_1.zzz",
+#   "abc_1_a.tif",
+#   "abc_1_xyz.abc",
+#   "abc_1_xyz.abc",
+#   "abc_2.abc",
+#   "abc_2.tif",
+#   "abc_2a.tif"
+# ]
+```
+
+This method gives higher priority to dots than underscores, so files like `abc.1_a.tif` will come before `abc.2.tif`.
+
+
 ## Implementation Notes
 
 The algorithm capitalizes on Ruby's array comparison behavior:
