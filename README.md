@@ -8,7 +8,8 @@ Natural ("version number") sorting with support for:
 * **college course codes**, and
 * **Unicode**.
 
-See Jeff Atwood's [Sorting for Humans: Natural Sort Order](https://blog.codinghorror.com/sorting-for-humans-natural-sort-order/) and my post [Counting to 10 in Californian](https://blog.public.law/2012/08/07/counting-from-1-to-10-in-californian/).
+See Jeff Atwood's [Sorting for Humans: Natural Sort Order](https://blog.codinghorror.com/sorting-for-humans-natural-sort-order/).
+
 
 ## Installation
 
