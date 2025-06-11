@@ -49,6 +49,16 @@ module Naturally
     tokens.map { |t| Segment.new(t) }
   end
 
+  # Natural sort for filenames, treating underscores and dots as separators.
+  # Dots are given higher priority by inserting a '0' segment, as in user workaround.
+  # See Issue #24.
+  def self.sort_filenames(array)
+    array.sort_by do |filename|
+      # Replace '.' with '.0.' to give dot higher priority, then split on dot or underscore
+      filename.to_s.gsub('.', '.0.').split(/[\._]/).map { |t| Segment.new(t) }
+    end
+  end
+
   private
   # Sort an array of objects "naturally", yielding each object
   # to the block to obtain the sort key.

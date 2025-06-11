@@ -208,4 +208,16 @@ describe Naturally do
       ]
     end
   end
+
+  describe '#sort_filenames' do
+    it 'sorts filenames with underscores and dots as separators' do
+      expect(Naturally.sort_filenames(['abc_2.tif', 'abc_1_a.tif'])).to eq(["abc_1_a.tif", "abc_2.tif"])
+      expect(Naturally.sort_filenames(['abc_1.zzz', 'abc_1_xyz.abc'])).to eq(["abc_1.zzz", "abc_1_xyz.abc"])
+      expect(Naturally.sort_filenames(['abc_2a.tif', 'abc_1_a.tif'])).to eq(["abc_1_a.tif", "abc_2a.tif"])
+      expect(Naturally.sort_filenames(['abc.2.tif', 'abc.1_a.tif'])).to eq(["abc.1_a.tif", "abc.2.tif"])
+      expect(Naturally.sort_filenames(['abc_2.tif', 'abc_1.tif'])).to eq(["abc_1.tif", "abc_2.tif"])
+      expect(Naturally.sort_filenames(['abc_2.tif', 'abc_1_a.tif'])).to eq(["abc_1_a.tif", "abc_2.tif"])
+      expect(Naturally.sort_filenames(['abc_2.abc', 'abc_1_xyz.abc'])).to eq(["abc_1_xyz.abc", "abc_2.abc"])
+    end
+  end
 end
