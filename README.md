@@ -3,6 +3,7 @@
 
 Natural ("version number") sorting with support for:
 
+* **file names**,
 * **legal document numbering**,
 * **college course codes**, and
 * **Unicode**.
