@@ -19,6 +19,8 @@ $ gem install naturally
 
 ## Usage
 
+### `#sort`
+
 ```Ruby
 require 'naturally'
 
@@ -61,7 +63,7 @@ Naturally.sort(releases, by: :version)
 [More examples are in the specs](https://github.com/public-law/naturally/blob/master/spec/naturally_spec.rb).
 
 
-## `#sort_filenames`
+### `#sort_filenames`
 
 Sorts filenames naturally, treating underscores and dots as separators. Useful for sorting files like images or documents that use numbers, underscores, and dots in their names.
 
