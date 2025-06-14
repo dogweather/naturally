@@ -47,18 +47,15 @@ releases = [
   UbuntuVersion.new('Lucid Lynx',       '10.04.4')
 ]
 
-# Sort by version number
-sorted = Naturally.sort(releases, by: :version)
+# Sort by the version attribute
+Naturally.sort(releases, by: :version)
 
-# Check what we have
-expect(sorted.map(&:name)).to eq [
-  'Lucid Lynx',
-  'Maverick Meerkat',
-  'Precise Pangolin',
-  'Quantal Quetzal',
-  'Raring Ringtail',
-  'Saucy Salamander'
-]
+=> [#<struct UbuntuVersion name="Lucid Lynx",       version="10.04.4">,
+    #<struct UbuntuVersion name="Maverick Meerkat", version="10.10">,
+    #<struct UbuntuVersion name="Precise Pangolin", version="12.04.4">,
+    #<struct UbuntuVersion name="Quantal Quetzal",  version="12.10">,
+    #<struct UbuntuVersion name="Raring Ringtail",  version="13.04">,
+    #<struct UbuntuVersion name="Saucy Salamander", version="13.10">]
 ```
 
 [More examples are in the specs](https://github.com/public-law/naturally/blob/master/spec/naturally_spec.rb).
