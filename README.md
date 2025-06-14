@@ -31,8 +31,7 @@ Naturally.sort(["336", "335a", "335", "335.1"])
           # => ["335", "335.1", "335a", "336"]
 ```
 
-Usually the library is used to sort an array of objects:
-
+The library can also sort an array of objects:
 
 ```Ruby
 # Define a new simple object for storing Ubuntu versions
