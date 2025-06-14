@@ -209,6 +209,7 @@ describe Naturally do
     end
   end
 
+
   describe '#sort_filenames' do
     it 'sorts filenames with underscores and dots as separators' do
       expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1_a.tif'])).to   eq(["abc_1_a.tif",   "abc_2.tif"])
@@ -219,7 +220,6 @@ describe Naturally do
       expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1_a.tif'])).to   eq(["abc_1_a.tif",   "abc_2.tif"])
       expect(Naturally.sort_filenames(['abc_2.abc',  'abc_1_xyz.abc'])).to eq(["abc_1_xyz.abc", "abc_2.abc"])
     end
-
 
     it 'sorts an array that fails under both Array#sort and Naturally#sort' do
       complex_array    = ["abc_2.tif", "abc_1_a.tif", "abc_10_a.tif"]
