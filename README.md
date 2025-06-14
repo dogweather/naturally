@@ -26,7 +26,7 @@ require 'naturally'
 Naturally.sort(["13.10", "13.04", "10.10", "10.04.4"])
           # => ["10.04.4", "10.10", "13.04", "13.10"]
 
-# Sort a simple array of strings with legal numbering
+# Sort legal section numbers
 Naturally.sort(["336", "335a", "335", "335.1"])
           # => ["335", "335.1", "335a", "336"]
 ```
