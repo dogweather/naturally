@@ -211,12 +211,12 @@ describe Naturally do
 
   describe '#sort_filenames' do
     it 'sorts filenames with underscores and dots as separators' do
-      expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1_a.tif'])).to eq(["abc_1_a.tif", "abc_2.tif"])
-      expect(Naturally.sort_filenames(['abc_1.zzz',  'abc_1_xyz.abc'])).to eq(["abc_1.zzz", "abc_1_xyz.abc"])
-      expect(Naturally.sort_filenames(['abc_2a.tif', 'abc_1_a.tif'])).to eq(["abc_1_a.tif", "abc_2a.tif"])
-      expect(Naturally.sort_filenames(['abc.2.tif',  'abc.1_a.tif'])).to eq(["abc.1_a.tif", "abc.2.tif"])
-      expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1.tif'])).to eq(["abc_1.tif", "abc_2.tif"])
-      expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1_a.tif'])).to eq(["abc_1_a.tif", "abc_2.tif"])
+      expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1_a.tif'])).to   eq(["abc_1_a.tif",   "abc_2.tif"])
+      expect(Naturally.sort_filenames(['abc_1.zzz',  'abc_1_xyz.abc'])).to eq(["abc_1.zzz",     "abc_1_xyz.abc"])
+      expect(Naturally.sort_filenames(['abc_2a.tif', 'abc_1_a.tif'])).to   eq(["abc_1_a.tif",   "abc_2a.tif"])
+      expect(Naturally.sort_filenames(['abc.2.tif',  'abc.1_a.tif'])).to   eq(["abc.1_a.tif",   "abc.2.tif"])
+      expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1.tif'])).to     eq(["abc_1.tif",     "abc_2.tif"])
+      expect(Naturally.sort_filenames(['abc_2.tif',  'abc_1_a.tif'])).to   eq(["abc_1_a.tif",   "abc_2.tif"])
       expect(Naturally.sort_filenames(['abc_2.abc',  'abc_1_xyz.abc'])).to eq(["abc_1_xyz.abc", "abc_2.abc"])
     end
 
@@ -229,8 +229,8 @@ describe Naturally do
       expect(Naturally.sort_filenames(complex_array)).to eq(correctly_sorted)
 
       # Should fail.
-      expect(Naturally.sort(complex_array)).not_to       eq(correctly_sorted)
-      expect(complex_array.sort).not_to                  eq(correctly_sorted)
+      expect(Naturally.sort(complex_array)).not_to eq(correctly_sorted)
+      expect(complex_array.sort).not_to            eq(correctly_sorted)
     end
   end
 end
